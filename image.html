@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { 
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .container img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .marker {
+    position: absolute;
+    background: white;
+    border: 1px solid #444;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    font-size: 13px;
+    cursor: default;
+  }
+
+  /* Tooltip box, wide and horizontal */
+  .marker::after {
+    content: attr(data-tip);
+    position: absolute;
+    left: 50%;
+    bottom: 32px;
+    transform: translateX(-50%);
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    border-radius: 2px;
+    padding: 6px 8px;
+    font-size: 13px;
+    color: #202122;
+    white-space: normal;
+    width: 500px;
+    max-width: 700px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease-in-out;
+    z-index: 10;
+  }
+
+  .marker:hover::after { opacity: 1; }
+</style>
+</head>
+
+<body>
+<div class="container">
+  <img src="waterstone.jpg" width="1000" alt="Waterstone Manor">
+
+  <!-- 1: Finials on the gables -->
+  <div class="marker" style="left: 40%; top: 24%;"
+       data-tip="&quot;coped gables with finials… traces of their Gothic extraction.&quot; Finials are small decorative spikes on the peaks of the triangular gable ends; they come from older Gothic design.">1</div>
+
+  <!-- 2: Weathered roof tiles -->
+  <div class="marker" style="left: 45%; top: 32%;"
+       data-tip="&quot;soft brown mosses, like faded velveteen, forming cushions upon the stone tiling.&quot; Stone tiles weather and gather moss, creating the mottled, softened roof texture Hardy describes.">2</div>
+
+  <!-- 3: Chimney stacks -->
+  <div class="marker" style="left: 57%; top: 28%;"
+       data-tip="&quot;chimneys… panelled or columnar.&quot; A chimney shaft is the tall vertical block that carries smoke; here they are shaped like panels or columns, making them decorative, not just functional.">3</div>
+
+  <!-- 4: Pilaster zone -->
+  <div class="marker" style="left: 51%; top: 39%;"
+       data-tip="&quot;fluted pilasters, worked from the solid stone.&quot; Pilasters are flattened columns attached to a wall; their fluting is the vertical groove pattern, now softened by age.">4</div>
+
+  <!-- 5: Projecting central bay -->
+  <div class="marker" style="left: 51%; top: 52%;"
+       data-tip="&quot;the memorial hall upon a small estate.&quot; This three-window bay projects outward as a shallow bow shape — a structural swell used to bring light and status to a hall-like centre.">5</div>
+
+  <!-- 6: Atmosphere of the façade -->
+  <div class="marker" style="left: 51%; top: 69%;"
+       data-tip="&quot;sleepy air… moss-encrusted… the vital principle… turned round.&quot; The façade — the front face of the building — appears shaded, inward-looking and time-softened, matching Hardy’s description.">6</div>
+</div>
+</body>
+</html>
